@@ -1,0 +1,6 @@
+# Request
+string  data
+bool    publish
+---
+# Response
+int32  bytesSent

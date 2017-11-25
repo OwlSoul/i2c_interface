@@ -1,0 +1,44 @@
+<launch>
+
+  <arg name="dev_A_address" value="11" />
+  <arg name="dev_A_name"    value="S01" />
+
+  <arg name="dev_B_address" value="12" />
+  <arg name="dev_B_name"    value="S02" />
+
+  <arg name="dev_C_address" value="13" />
+  <arg name="dev_C_name"    value="S03" />
+
+  <node ns="robot" pkg="i2c_interface" name="i2c_interface" type="i2c_interface_node" output="screen">
+    <!--                        GLOBAL PARAMETER                             -->
+    <param name="i2c_device" value="/dev/i2c-1" />
+    <param name="keep_open"  value="false" />
+
+    <!--                        I2C DEVICE A                                 -->
+    <param name="device/$(arg dev_A_name)/address" value="$(arg dev_A_address)" />
+    <param name="device/$(arg dev_A_name)/services"          value="true" />
+    <param name="device/$(arg dev_A_name)/request/rate"      value="500" />
+    <param name="device/$(arg dev_A_name)/request/bytes"     value="10" />
+    <param name="device/$(arg dev_A_name)/recv_topic/bytes"  value="$(arg dev_A_name)/recv_b"/>
+    <param name="device/$(arg dev_A_name)/recv_topic/string" value="$(arg dev_A_name)/recv_s"/>
+    <param name="device/$(arg dev_A_name)/send_topic/bytes"  value="$(arg dev_A_name)/send_b"/>
+    <param name="device/$(arg dev_A_name)/send_topic/string" value="$(arg dev_A_name)/send_s"/>
+
+    <!--                        I2C DEVICE B                                 -->
+    <param name="device/$(arg dev_B_name)/address" value="$(arg dev_B_address)" />
+    <param name="device/$(arg dev_B_name)/services"          value="true" />
+    <param name="device/$(arg dev_B_name)/request/rate"      value="300" />
+    <param name="device/$(arg dev_B_name)/request/bytes"     value="10" />
+    <param name="device/$(arg dev_B_name)/recv_topic/bytes"  value="$(arg dev_B_name)/recv_b"/>
+    <param name="device/$(arg dev_B_name)/recv_topic/string" value="$(arg dev_B_name)/recv_s"/>
+    <param name="device/$(arg dev_B_name)/send_topic/bytes"  value="$(arg dev_B_name)/send_b"/>
+    <param name="device/$(arg dev_B_name)/send_topic/string" value="$(arg dev_B_name)/send_s" />
+
+    <!--                        I2C DEVICE C                                 -->
+    <param name="device/$(arg dev_C_name)/address" value="$(arg dev_C_address)" />
+    <param name="device/$(arg dev_C_name)/services"          value="true" />
+    <param name="device/$(arg dev_C_name)/send_topic/bytes"  value="$(arg dev_C_name)/send_b"/>
+    <param name="device/$(arg dev_C_name)/send_topic/string" value="$(arg dev_C_name)/send_s"/>
+  </node>
+
+</launch>

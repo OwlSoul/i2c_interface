@@ -1,0 +1,7 @@
+# Request
+uint32  bytesToRead
+bool    publish
+---
+# Response
+int32   bytesReceived
+string  data
