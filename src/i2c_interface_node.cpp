@@ -3,7 +3,7 @@
   * While there is no direct advantage over writing your own node incorporating
   * I2C, this node still may be handy in several situations.
   *
-  * Node sets up a topic branch and service branch for each I2C device specified,
+  * Node sets up topic branch and service branch for each I2C device specified,
   * and gives you a possibility to interract with I2C devices either via topics
   * or services.
   *
