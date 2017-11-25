@@ -1,6 +1,6 @@
 /** @mainpage ROS I2C interface
   * This node provides a simple interface for I2C devices.
-  * While there is no direct advantage of writing your own node incorporating
+  * While there is no direct advantage over writing your own node incorporating
   * I2C, this node still may be handy in several situations.
   *
   * Node sets up a topic branch and service branch for each I2C device specified,
