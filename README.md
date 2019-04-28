@@ -22,7 +22,7 @@ I made this project a while ago, to play with I2C in ROS. The idea was to use it
 
 Sounds good, right? 
 
-Unless it isn't. This approach completely violates the ROS ideology (messages and services should be meaningful), and also I2C bus can be shared between multiple nodes, if written correctly. You can simply write a node supporting getting data from I2C bus, no need to "expose" I2C device via topics/services (again, not the brightest idea).
+Unless it isn't. This approach completely violates the ROS ideology (messages and services should be meaningful), and also I2C bus can be shared between multiple nodes, if written correctly. You can simply write a node supporting getting some data from I2C bus, no need to "expose" I2C device via topics/services (again, not the brightest idea).
 
 If you wanted to send ALL ROS messages via I2C - now that's a pretty neat idea for ROS project, yeah. I thought about that when was writing this little thing. The problem is that practically ALL I2C-capable single Board PCs (Raspberry PI, Orange PI, Odroid etc) cannot work as I2C slaves. Master only. And things which can work a I2C slaves (Arduino devices, STM32/NXP microcontrollers or other stuff) don't support ROS. ROS2 may have a big chance for this.
 
