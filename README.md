@@ -1,4 +1,4 @@
-
+**The project is suspended, see the description below.**
 
 This node provides a simple interface for I2C devices. While there is no direct advantage over writing your own node incorporating I2C, this node still may be handy in several situations.
 
